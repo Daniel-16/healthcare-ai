@@ -16,7 +16,7 @@ const HeroSection = () => {
         </p>
         <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
           <Link
-            href="#"
+            href="/signup"
             className="px-7 py-3 w-full bg-indigo-700 text-white text-center rounded-md shadow-md block sm:w-auto hover:bg-indigo-800"
           >
             Get started
