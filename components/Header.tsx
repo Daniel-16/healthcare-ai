@@ -70,7 +70,7 @@ const Header = () => {
         </div>
         <div className="hidden md:inline-block">
           <Link
-            href="#"
+            href="/login"
             className="py-3 px-8 font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow"
           >
             Log in
