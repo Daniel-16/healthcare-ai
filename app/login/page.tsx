@@ -7,7 +7,9 @@ const Login = () => {
       <main className="w-full h-screen flex flex-col items-center justify-center sm:px-4">
         <div className="w-full space-y-6 text-gray-600 sm:max-w-md">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-800">Healthcare</h1>
+            <Link href="/">
+              <h1 className="text-4xl font-bold text-gray-800">Healthcare</h1>
+            </Link>
             <div className="mt-5 space-y-2">
               <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
                 Log in to your account
