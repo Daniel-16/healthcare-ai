@@ -30,6 +30,7 @@ const Signup = () => {
                 type="text"
                 required
                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                placeholder="John Doe"
               />
             </div>
             <div>
@@ -38,6 +39,7 @@ const Signup = () => {
                 type="email"
                 required
                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                placeholder="johndoe@mail.com"
               />
             </div>
             <div>
@@ -46,6 +48,7 @@ const Signup = () => {
                 type="password"
                 required
                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                placeholder="Must have at least 6 characters"
               />
             </div>
             <button
