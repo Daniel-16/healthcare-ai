@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const Header = () => {
   const [state, setState] = useState(false);
   return (
-    <nav className="bg-white w-full border-b md:border-0 md:static">
+    <nav className="bg-white w-full border-b md:border-0 md:static shadow-sm md:shadow-none">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="#" className="text-2xl font-medium text-gray-600">
@@ -55,7 +55,7 @@ const Header = () => {
         >
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             <li className="text-gray-600 hover:text-indigo-600">
-              <Link href="#">Doctors</Link>
+              <Link href="#">All Doctors</Link>
             </li>
             <li className="text-gray-600 hover:text-indigo-600">
               <Link href="#">Find Doctor</Link>
@@ -71,7 +71,7 @@ const Header = () => {
         <div className="hidden md:inline-block">
           <Link
             href="/login"
-            className="py-3 px-8 font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow"
+            className="py-3 px-8 font-medium text-white bg-indigo-700 hover:bg-indigo-800 rounded-md shadow"
           >
             Log in
           </Link>
