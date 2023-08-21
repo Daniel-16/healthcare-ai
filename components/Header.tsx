@@ -66,6 +66,14 @@ const Header = () => {
             <li className="text-gray-600 hover:text-indigo-600">
               <Link href="#">Contact us</Link>
             </li>
+            <li className="md:hidden">
+              <Link
+                href="/login"
+                className="text-gray-600 hover:text-indigo-600"
+              >
+                Log in
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="hidden md:inline-block">
