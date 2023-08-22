@@ -16,11 +16,11 @@ const Signup = () => {
   if (step == 0) {
     return (
       <>
-        <main className="w-full h-screen flex flex-col items-center justify-center px-4">
+        <main className="w-full flex flex-col items-center justify-center px-4">
           <div className="max-w-sm w-full text-gray-600">
             <div className="text-center">
               <h1 className="text-gray-800 text-4xl font-bold">Healthcare</h1>
-              <div className="mt-5 space-y-2">
+              <div className="mt-3 space-y-2">
                 <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
                   Sign up
                 </h3>
@@ -37,7 +37,7 @@ const Signup = () => {
             </div>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-8 space-y-5"
+              className="mt-8 space-y-4"
             >
               <div>
                 <label className="font-medium">Name</label>
@@ -58,6 +58,30 @@ const Signup = () => {
                 />
               </div>
               <div>
+                <label className="font-medium">Choose account type</label>
+                <div className="mx-auto relative">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute top-0 bottom-0 w-6 h-6 my-auto text-gray-400 right-2.5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <select
+                    required
+                    className="w-full px-3 py-2 text-gray-500 bg-white border rounded-lg shadow-sm outline-none appearance-none focus:border-indigo-700"
+                  >
+                    <option>Patient</option>
+                    <option>Doctor</option>
+                  </select>
+                </div>
+              </div>
+              <div>
                 <label className="font-medium">Password</label>
                 <input
                   type="password"
@@ -74,7 +98,7 @@ const Signup = () => {
                 Create account
               </button>
             </form>
-            <div className="grid grid-cols-3 gap-x-3 mt-3.5">
+            <div className="grid grid-cols-3 gap-x-3 mt-3.5 md:mb-4">
               {/* Google svg button */}
               <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
                 <svg
