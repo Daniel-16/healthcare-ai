@@ -1,4 +1,5 @@
 "use client";
+import ShowPassword from "@/components/ShowPassword";
 import Link from "next/link";
 
 const Login = () => {
@@ -102,12 +103,15 @@ const Login = () => {
               </div>
               <div>
                 <label className="font-medium">Password</label>
-                <input
+                {/* <input
                   type="password"
                   required
                   className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   placeholder="Password"
-                />
+                /> */}
+                <div className="w-full">
+                  <ShowPassword placeholder="Password" />
+                </div>
               </div>
               <button
                 type="submit"

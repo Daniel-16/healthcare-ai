@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import AccountType from "./accountType";
+import ShowPassword from "@/components/ShowPassword";
 
 const Signup = () => {
   const [step, setStep] = useState(0);
@@ -83,12 +84,13 @@ const Signup = () => {
               </div>
               <div>
                 <label className="font-medium">Password</label>
-                <input
+                {/* <input
                   type="password"
                   required
                   className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   placeholder="Must have at least 6 characters"
-                />
+                /> */}
+                <ShowPassword placeholder="Must have at least 6 characters" />
               </div>
               <button
                 type="submit"

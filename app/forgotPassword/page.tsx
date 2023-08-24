@@ -1,4 +1,5 @@
 "use client";
+import ShowPassword from "@/components/ShowPassword";
 
 const ForgotPassword = () => {
   return (
@@ -12,12 +13,7 @@ const ForgotPassword = () => {
         <form className="mt-3 space-y-6" onSubmit={(e) => e.preventDefault()}>
           <div>
             <label className="font-medium">New password</label>
-            <input
-              type="password"
-              className="w-full py-2 px-3 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
-              required
-              placeholder="New password"
-            />
+            <ShowPassword placeholder="New Password" />
           </div>
           <div>
             <label className="font-medium">Confirm password</label>
