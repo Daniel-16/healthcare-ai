@@ -69,7 +69,7 @@ const Header = () => {
             <li className="md:hidden">
               <Link
                 href="/login"
-                className="text-gray-600 hover:text-indigo-600"
+                className="text-gray-600 hover:text-indigo-700"
               >
                 Log in
               </Link>
@@ -79,7 +79,7 @@ const Header = () => {
         <div className="hidden md:inline-block">
           <Link
             href="/login"
-            className="py-3 px-8 font-medium text-white bg-indigo-700 hover:bg-indigo-800 rounded-md shadow"
+            className="py-3 px-8 font-medium text-white bg-indigo-700 hover:bg-indigo-700 rounded-md shadow"
           >
             Log in
           </Link>
