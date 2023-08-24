@@ -55,7 +55,7 @@ const Header = () => {
         >
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             <li className="text-gray-600 hover:text-indigo-600">
-              <Link href="#">All Doctors</Link>
+              <Link href="/doctors">All Doctors</Link>
             </li>
             <li className="text-gray-600 hover:text-indigo-600">
               <Link href="#">Find Doctor</Link>
