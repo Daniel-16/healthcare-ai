@@ -30,7 +30,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="flex-1 text-center mt-7 lg:mt-0 lg:ml-3">
-        <Image src={hero} alt="Doctor" />
+        <Image src={hero} alt="Doctor" priority={true} />
       </div>
     </section>
   );
