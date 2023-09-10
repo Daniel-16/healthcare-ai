@@ -1,7 +1,15 @@
 "use client";
 import { useState } from "react";
 
-const ShowPassword = ({ placeholder }: { placeholder: string }) => {
+const ShowPassword = ({
+  placeholder,
+  onChange,
+  value,
+}: {
+  placeholder: string;
+  onChange: any;
+  value: any;
+}) => {
   const [passwordHidden, setPasswordHidden] = useState(true);
   const showPassword = () => {
     setPasswordHidden(!passwordHidden);
@@ -51,6 +59,9 @@ const ShowPassword = ({ placeholder }: { placeholder: string }) => {
       </span>
       <input
         type={passwordHidden ? "password" : "text"}
+        name="password"
+        value={value}
+        onChange={onChange}
         className="w-full py-2 px-3 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
         required
         placeholder={placeholder}
