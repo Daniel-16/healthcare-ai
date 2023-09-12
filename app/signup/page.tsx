@@ -40,11 +40,16 @@ const Signup = () => {
   return (
     <>
       <main className="w-full flex flex-col items-center justify-center px-4">
-        <div className="max-w-sm w-full text-gray-600">
+        <div className="max-w-sm w-full text-gray-600 mt-10 md:mt-5">
           <div className="text-center">
-            <h1 className="text-gray-800 text-4xl font-bold">Healthcare</h1>
+            <Link
+              href={"/"}
+              className="text-gray-700 text-4xl font-bold hover:underline"
+            >
+              HealthCare AI
+            </Link>
             <div className="mt-3 space-y-2">
-              <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
+              <h3 className="text-gray-700 text-2xl font-bold sm:text-3xl">
                 Sign up
               </h3>
               <p className="">
