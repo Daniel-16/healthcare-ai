@@ -8,7 +8,21 @@ import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 
 export const signInWithGoogle = async () => {
   try {
-    await signInWithPopup(auth, googleProvider);
+    const userCollectionRef = collection(db, "users");
+    // const emailQuery = query(userCollectionRef, where("email", "==", email))
+    const user = await signInWithPopup(auth, googleProvider);
+    console.log(user);
+    const emailQuery = await query(
+      userCollectionRef,
+      where("email", "==", user.email)
+    );
+    const querySnapshot = await getDocs(emailQuery);
+    if (querySnapshot.empty) {
+      console.log("Welcome! Login successfull");
+    } else {
+      console.log("Create an account first");
+      return;
+    }
   } catch (error) {
     console.error(error);
   }

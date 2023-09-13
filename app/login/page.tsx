@@ -32,7 +32,7 @@ const Login = () => {
                 HealthCare AI
               </h1>
             </Link>
-            <div className="space-y-2">
+            <div className="mt-3 space-y-2">
               <h3 className="text-gray-700 text-2xl font-bold sm:text-3xl">
                 Log in to your account
               </h3>
