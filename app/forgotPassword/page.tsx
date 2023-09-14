@@ -7,13 +7,17 @@ const ForgotPassword = () => {
       <div className="max-w-sm w-full text-gray-600">
         <div className="text-center mb-4">
           <h2 className="text-3xl text-gray-800 font-semibold">
-            Forgot password
+            Reset password
           </h2>
         </div>
         <form className="mt-3 space-y-6" onSubmit={(e) => e.preventDefault()}>
           <div>
             <label className="font-medium">New password</label>
-            <ShowPassword placeholder="New Password" />
+            <ShowPassword
+              placeholder="New Password"
+              onChange={undefined}
+              value={undefined}
+            />
           </div>
           <div>
             <label className="font-medium">Confirm password</label>

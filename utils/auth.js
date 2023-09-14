@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   deleteUser,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { logEvent } from "firebase/analytics";
@@ -78,6 +79,15 @@ export const createUserWithEmail = async (
     logEvent(analytics, "sign_up", {
       method: "Name, email, password and accountType",
     });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const passwordReset = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    console.log("Password reset email sent successfully");
   } catch (error) {
     console.error(error);
   }

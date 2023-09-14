@@ -97,7 +97,7 @@ const Login = () => {
             </form>
           </div>
           <div className="text-center">
-            <Link href="/forgotPassword" className="hover:text-indigo-600">
+            <Link href="/passwordResetEmail" className="hover:text-indigo-600">
               Forgot password?
             </Link>
           </div>
