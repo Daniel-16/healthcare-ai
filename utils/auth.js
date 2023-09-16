@@ -1,4 +1,4 @@
-import { auth, db, googleProvider, analytics } from "../config/firebase";
+import { auth, db, googleProvider } from "../config/firebase";
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -7,7 +7,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
-import { logEvent } from "firebase/analytics";
+// import { logEvent } from "firebase/analytics";
 
 const checkUserAndSignIn = async (user) => {
   const userCollectionRef = collection(db, "users");
@@ -24,9 +24,9 @@ const checkUserAndSignIn = async (user) => {
       .catch((err) => console.error(err));
   } else {
     console.log("Log in successfull");
-    logEvent(analytics, "login", {
-      method: "Google",
-    });
+    // logEvent(analytics, "login", {
+    //   method: "Google",
+    // });
   }
 };
 
@@ -40,15 +40,16 @@ export const signInWithGoogle = async () => {
   }
 };
 
-export const signInWithEmail = async (email, password) => {
+export const signInWithEmail = async (email, password, setError) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
     console.log("Signin Successful");
-    logEvent(analytics, "login", {
-      method: "Email and Password",
-    });
+    // logEvent(analytics, "login", {
+    //   method: "Email and Password",
+    // });
   } catch (error) {
     console.error(error);
+    setError(error.message);
   }
 };
 
@@ -76,9 +77,9 @@ export const createUserWithEmail = async (
     await signInWithEmailAndPassword(auth, email, password);
     console.log(user);
     console.log("Account created successfully");
-    logEvent(analytics, "sign_up", {
-      method: "Name, email, password and accountType",
-    });
+    // logEvent(analytics, "sign_up", {
+    //   method: "Name, email, password and accountType",
+    // });
   } catch (error) {
     console.error(error);
   }

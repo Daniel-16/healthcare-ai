@@ -4,9 +4,12 @@ import Link from "next/link";
 import AuthButton from "@/components/AuthButton";
 import { signInWithEmail, signInWithGoogle } from "../../utils/auth";
 import { useState, ChangeEvent, FormEvent } from "react";
+import ErrorModal from "@/components/Error";
 
 const Login = () => {
   const [loginData, setLogin] = useState({ email: "", password: "" });
+  const [error, setError] = useState(null);
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setLogin({
@@ -15,12 +18,17 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { email, password } = loginData;
     console.log("Email:", email);
     console.log("Password:", password);
-    signInWithEmail(email, password);
+    setError(null);
+    try {
+      await signInWithEmail(email, password, setError);
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <>
@@ -59,7 +67,7 @@ const Login = () => {
                 Or continue with
               </p>
             </div>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="font-medium">Email</label>
                 <input
@@ -88,6 +96,7 @@ const Login = () => {
                   />
                 </div>
               </div>
+              {error && <ErrorModal error={error} />}
               <button
                 type="submit"
                 className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
@@ -95,11 +104,14 @@ const Login = () => {
                 Sign in
               </button>
             </form>
-          </div>
-          <div className="text-center">
-            <Link href="/passwordResetEmail" className="hover:text-indigo-600">
-              Forgot password?
-            </Link>
+            <div className="text-center">
+              <Link
+                href="/passwordResetEmail"
+                className="hover:text-indigo-600"
+              >
+                Forgot password?
+              </Link>
+            </div>
           </div>
         </div>
       </main>
