@@ -1,4 +1,4 @@
-import { auth, db, googleProvider, analytics } from "../firebase";
+import { auth, db, googleProvider, analytics } from "../config/firebase";
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
