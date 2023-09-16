@@ -34,7 +34,7 @@ const Signup = () => {
     const { email, password } = signUpData;
     const { fullname, accountType } = users;
     createUserWithEmail(email, password, fullname, accountType);
-    console.log(users);
+    console.log(users, email);
   };
 
   return (
