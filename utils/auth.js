@@ -49,7 +49,8 @@ export const signInWithEmail = async (email, password, setError) => {
     // });
   } catch (error) {
     console.error(error);
-    setError(error.message);
+    const { message } = error;
+    setError(message);
   }
 };
 
@@ -57,7 +58,8 @@ export const createUserWithEmail = async (
   email,
   password,
   fullname,
-  accountType
+  accountType,
+  setError
 ) => {
   const userCollectionRef = collection(db, "users");
 
@@ -66,6 +68,7 @@ export const createUserWithEmail = async (
   try {
     if (!emailQuerySnapshot.empty) {
       console.log("Email is already in use!");
+      setError("Email already in use!");
       return;
     }
     const user = await addDoc(userCollectionRef, {
@@ -82,6 +85,7 @@ export const createUserWithEmail = async (
     // });
   } catch (error) {
     console.error(error);
+    setError(error.message);
   }
 };
 

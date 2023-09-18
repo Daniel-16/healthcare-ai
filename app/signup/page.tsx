@@ -3,6 +3,7 @@ import Link from "next/link";
 import ShowPassword from "@/components/ShowPassword";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { createUserWithEmail } from "@/utils/auth";
+import ErrorModal from "@/components/Error";
 
 const Signup = () => {
   const [signUpData, setSignUp] = useState({ email: "", password: "" });
@@ -11,6 +12,7 @@ const Signup = () => {
     accountType: "",
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   //Handle Input Change for create user with email function
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,8 +38,15 @@ const Signup = () => {
     const { email, password } = signUpData;
     const { fullname, accountType } = users;
     console.log(users, email);
+    setError(null);
     try {
-      await createUserWithEmail(email, password, fullname, accountType);
+      await createUserWithEmail(
+        email,
+        password,
+        fullname,
+        accountType,
+        setError
+      );
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -136,6 +145,7 @@ const Signup = () => {
                 value={signUpData.password}
               />
             </div>
+            {error && <ErrorModal error={error} />}
             <button
               type="submit"
               disabled={loading && true}
