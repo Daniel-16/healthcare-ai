@@ -1,9 +1,16 @@
 "use client";
+import AuthButton from "@/components/AuthButton";
+import ErrorModal from "@/components/Error";
+import SuccessMessage from "@/components/SuccessMessage";
 import { passwordReset } from "@/utils/auth";
 import { ChangeEvent, useState } from "react";
 
 const ResetEmail = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
   return (
     <main className="w-full h-screen flex flex-col items-center justify-center px-4">
       <div className="max-w-sm w-full text-gray-600">
@@ -13,12 +20,20 @@ const ResetEmail = () => {
           </h2>
         </div>
         <form
-          className="mt-3 space-y-6"
-          onSubmit={(e) => {
+          className="mt-3 space-y-3"
+          onSubmit={async (e) => {
             e.preventDefault();
+            setLoading(true);
             console.log(email);
-            passwordReset(email);
-            setEmail("");
+            setError(null);
+            setSuccess(false);
+            try {
+              await passwordReset(email, setError, setSuccess);
+              setLoading(false);
+            } catch (error) {
+              setSuccess(false);
+              setLoading(false);
+            }
           }}
         >
           <div>
@@ -52,12 +67,11 @@ const ResetEmail = () => {
               />
             </div>
           </div>
-          <button
-            type="submit"
-            className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
-          >
-            Send password reset link
-          </button>
+          {success && (
+            <SuccessMessage message="Password reset link sent! Check your email for instructions." />
+          )}
+          {error && <ErrorModal error={error} />}
+          <AuthButton loading={loading} buttonText="Send reset link" />
         </form>
       </div>
     </main>

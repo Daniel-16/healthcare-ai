@@ -89,11 +89,13 @@ export const createUserWithEmail = async (
   }
 };
 
-export const passwordReset = async (email) => {
+export const passwordReset = async (email, setError, setSuccess) => {
   try {
     await sendPasswordResetEmail(auth, email);
     console.log("Password reset email sent successfully");
+    setSuccess(true);
   } catch (error) {
     console.error(error);
+    setError(error.message);
   }
 };
