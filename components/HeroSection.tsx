@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="mt-24 mx-auto max-w-screen-xl pb-12 px-4 items-center lg:flex md:px-8">
+    <section className="mt-16 mx-auto max-w-screen-xl pb-12 px-4 items-center lg:flex md:px-8">
       <div className="space-y-4 flex-1 sm:text-center lg:text-left">
         <h1 className="text-indigo-700 font-bold text-4xl xl:text-5xl">
           Connecting with Doctors made easier through AI
