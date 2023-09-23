@@ -1,6 +1,8 @@
 import Image from "next/image";
 import doctor from "../../public/images/doctor.jpg";
 import SearchInput from "@/components/SearchInput";
+import Header from "@/components/Header";
+// import Link from "next/link";
 
 const Doctors = () => {
   const doctors = [
@@ -42,6 +44,7 @@ const Doctors = () => {
   ];
   return (
     <>
+      <Header />
       <SearchInput />
       <div className="py-14 max-w-screen-xl mx-auto px-4 text-center md:px-8">
         <div className="max-w-xl mx-auto">
@@ -50,9 +53,12 @@ const Doctors = () => {
           </h3>
         </div>
         <div className="mt-10">
-          <ul className="grid gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          <ul className="grid gap-5 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4">
             {doctors.map((item, id) => (
-              <li key={id}>
+              <li
+                key={id}
+                className="shadow-sm border rounded-lg py-7 hover:cursor-pointer hover:shadow-lg duration-300"
+              >
                 <div className="w-20 h-20 mx-auto">
                   <Image
                     src={item.imageUrl}
