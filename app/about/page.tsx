@@ -8,8 +8,8 @@ const About = () => {
         <h1 className="text-gray-700 text-center text-4xl font-semibold mb-8">
           About Us
         </h1>
-        <div className="container mx-auto px-4 flex space-x-10">
-          <div className="flex-1 border p-5 rounded-lg shadow-md hover:shadow-lg duration-300">
+        <div className="container mx-auto px-4 grid lg:grid-cols-3 lg:space-x-5">
+          <div className="border p-5 rounded-lg shadow-md hover:shadow-lg duration-300 mb-5 md:mb-5 lg:mb-0">
             <h2 className="text-gray-700 text-xl font-semibold mb-4">Vision</h2>
             <p className="text-gray-600">
               Our vision is to revolutionize healthcare by leveraging
@@ -22,7 +22,7 @@ const About = () => {
               improving the quality of life for people around the world.
             </p>
           </div>
-          <div className="flex-1 border p-5 rounded-lg shadow-md hover:shadow-lg duration-300">
+          <div className="border p-5 rounded-lg shadow-md hover:shadow-lg duration-300 mb-5 md:mb-5 lg:mb-0">
             <h2 className="text-gray-700 text-xl font-semibold mb-4">
               Privacy and Security
             </h2>
@@ -51,7 +51,7 @@ const About = () => {
               </li>
             </ul>
           </div>
-          <div className="flex-1 border p-5 rounded-lg shadow-md hover:shadow-lg duration-300">
+          <div className="border p-5 rounded-lg shadow-md hover:shadow-lg duration-300">
             <h2 className="text-gray-700 text-xl font-semibold mb-4">
               Areas we target
             </h2>
