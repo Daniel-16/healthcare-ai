@@ -57,8 +57,8 @@ const Signup = () => {
 
   return (
     <>
-      <main className="w-full flex flex-col items-center justify-center px-4">
-        <div className="max-w-sm w-full text-gray-600 mt-10 md:mt-3">
+      <main className="w-full h-screen flex flex-col items-center justify-center sm:px-4">
+        <div className="w-full px-4 sm:max-w-md text-gray-600">
           <div className="text-center">
             <Link
               href="/"
