@@ -5,8 +5,8 @@ import {
   createUserWithEmailAndPassword,
   deleteUser,
   sendPasswordResetEmail,
-} from "firebase/auth";
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+} from "@firebase/auth";
+import { addDoc, collection, getDocs, query, where } from "@firebase/firestore";
 // import { logEvent } from "firebase/analytics";
 
 const checkUserAndSignIn = async (user) => {
