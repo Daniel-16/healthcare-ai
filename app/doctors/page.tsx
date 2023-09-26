@@ -2,6 +2,7 @@ import Image from "next/image";
 import doctor from "../../public/images/doctor.jpg";
 import SearchInput from "@/components/SearchInput";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 // import Link from "next/link";
 
 const Doctors = () => {
@@ -77,6 +78,7 @@ const Doctors = () => {
           </ul>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
