@@ -116,7 +116,7 @@ const Login = () => {
             </form>
             <div className="text-center">
               <Link
-                href="/passwordResetEmail"
+                href="/password-reset-email"
                 className="hover:text-indigo-600"
               >
                 Forgot password?
