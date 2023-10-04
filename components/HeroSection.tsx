@@ -21,12 +21,12 @@ const HeroSection = () => {
           >
             Get started
           </Link>
-          {/* <Link
+          <Link
             href="#"
             className="px-7 py-3 w-full bg-gray-700 text-gray-200 text-center rounded-md block sm:w-auto hover:bg-gray-800"
           >
             Try it out
-          </Link> */}
+          </Link>
         </div>
       </div>
       <div className="flex-1 text-center mt-7 lg:mt-0 lg:ml-3">
