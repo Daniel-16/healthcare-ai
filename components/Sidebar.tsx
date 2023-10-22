@@ -10,22 +10,19 @@ const Sidebar = () => {
       <aside className="bg-gray-800 text-white w-64 min-h-screen p-4">
         <nav>
           <ul className="space-y-2">
-            <li className="opcion-con-desplegable">
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700">
+            <li>
+              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
                 <div className="flex items-center">
-                  <i className="fas fa-calendar-alt mr-2"></i>
-                  <span>Agenda</span>
+                  <span>Sidebar Content</span>
                 </div>
-                <i className="fas fa-chevron-down text-xs"></i>
               </div>
-              <ul className="desplegable ml-4 hidden">
+              <ul className="ml-4 hidden">
                 <li>
                   <Link
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Gestion de citas
+                    Sidebar Content
                   </Link>
                 </li>
                 <li>
@@ -33,28 +30,24 @@ const Sidebar = () => {
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Polizas
+                    Sidebar Content
                   </Link>
                 </li>
               </ul>
             </li>
-            <li className="opcion-con-desplegable">
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700">
+            <li>
+              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
                 <div className="flex items-center">
-                  <i className="fas fa-money-bill-wave mr-2"></i>
-                  <span>Contabilidad</span>
+                  <span>Sidebar Content</span>
                 </div>
-                <i className="fas fa-chevron-down text-xs"></i>
               </div>
-              <ul className="desplegable ml-4 hidden">
+              <ul className="ml-4 hidden">
                 <li>
                   <a
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Tratamientos
+                    Sidebar Content
                   </a>
                 </li>
                 <li>
@@ -62,8 +55,7 @@ const Sidebar = () => {
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Gastos
+                    Sidebar Content
                   </Link>
                 </li>
                 <li>
@@ -71,57 +63,24 @@ const Sidebar = () => {
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Facturas
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li className="opcion-con-desplegable">
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700">
-                <div className="flex items-center">
-                  <i className="fas fa-chart-bar mr-2"></i>
-                  <span>Informes</span>
-                </div>
-                <i className="fas fa-chevron-down text-xs"></i>
-              </div>
-              <ul className="desplegable ml-4 hidden">
-                <li>
-                  <Link
-                    href="#"
-                    className="p-2 hover:bg-gray-700 flex items-center"
-                  >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Presupuestos
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="p-2 hover:bg-gray-700 flex items-center"
-                  >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Informe médico
+                    Sidebar Content
                   </Link>
                 </li>
               </ul>
             </li>
-            <li className="opcion-con-desplegable">
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700">
+            <li>
+              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
                 <div className="flex items-center">
-                  <i className="fas fa-file-alt mr-2"></i>
-                  <span>Documentación</span>
+                  <span>Sidebar Content</span>
                 </div>
-                <i className="fas fa-chevron-down text-xs"></i>
               </div>
-              <ul className="desplegable ml-4 hidden">
+              <ul className="ml-4 hidden">
                 <li>
                   <Link
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Firmas pendientes
+                    Sidebar Content
                   </Link>
                 </li>
                 <li>
@@ -129,8 +88,32 @@ const Sidebar = () => {
                     href="#"
                     className="p-2 hover:bg-gray-700 flex items-center"
                   >
-                    <i className="fas fa-chevron-right mr-2 text-xs"></i>
-                    Documentos
+                    Sidebar Content
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
+                <div className="flex items-center">
+                  <span>Sidebar Content</span>
+                </div>
+              </div>
+              <ul className="ml-4 hidden">
+                <li>
+                  <Link
+                    href="#"
+                    className="p-2 hover:bg-gray-700 flex items-center"
+                  >
+                    Sidebar Content
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="p-2 hover:bg-gray-700 flex items-center"
+                  >
+                    Sidebar Content
                   </Link>
                 </li>
               </ul>
