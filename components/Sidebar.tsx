@@ -7,11 +7,11 @@ import Link from "next/link";
 const Sidebar = () => {
   return (
     <>
-      <aside className="bg-gray-800 text-white w-64 min-h-screen p-4">
+      <aside className="bg-white text-gray-700 w-64 min-h-screen p-4 shadow-xl border-t-2">
         <nav>
           <ul className="space-y-2">
             <li>
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
+              <div className="flex items-center justify-between p-2 hover:bg-indigo-700 hover:text-white duration-500 ease-in-out hover:cursor-pointer hover:rounded-md active:bg-indigo-400">
                 <div className="flex items-center">
                   <span>Sidebar Content</span>
                 </div>
@@ -36,7 +36,7 @@ const Sidebar = () => {
               </ul>
             </li>
             <li>
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
+              <div className="flex items-center justify-between p-2 hover:text-white hover:cursor-pointer hover:rounded-md duration-500 ease-in-out hover:bg-indigo-700 active:bg-indigo-400">
                 <div className="flex items-center">
                   <span>Sidebar Content</span>
                 </div>
@@ -69,7 +69,7 @@ const Sidebar = () => {
               </ul>
             </li>
             <li>
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
+              <div className="flex items-center justify-between p-2 hover:text-white hover:cursor-pointer hover:rounded-md duration-500 ease-in-out hover:bg-indigo-700 active:bg-indigo-400">
                 <div className="flex items-center">
                   <span>Sidebar Content</span>
                 </div>
@@ -94,7 +94,7 @@ const Sidebar = () => {
               </ul>
             </li>
             <li>
-              <div className="flex items-center justify-between p-2 hover:bg-gray-700 hover:cursor-pointer hover:rounded-md">
+              <div className="flex items-center justify-between p-2 hover:text-white hover:cursor-pointer hover:rounded-md duration-500 ease-in-out hover:bg-indigo-700 active:bg-indigo-400">
                 <div className="flex items-center">
                   <span>Sidebar Content</span>
                 </div>
