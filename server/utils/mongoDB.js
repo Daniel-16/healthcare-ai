@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/healthcare-app");
+    await mongoose.connect(`${process.env.MONGODB_LOCAL}`);
     // console.log(db);
     // mongoose.connection.on("connected", () => {
     console.log("Connected to MongoDB");
