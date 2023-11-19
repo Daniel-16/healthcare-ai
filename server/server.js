@@ -12,7 +12,7 @@ app.use("/api", router);
 
 const port = process.env.PORT || 7000;
 try {
-  connectDB();
+  await connectDB();
   app.listen(port, () => {
     console.log(`Server started at port ${port}`);
   });
