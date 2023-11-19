@@ -1,10 +1,12 @@
 import { auth, db, googleProvider } from "@/config/firebase";
 import {
-  signInWithPopup,
+  // signInWithPopup,
+  signInWithRedirect,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   deleteUser,
   sendPasswordResetEmail,
+  getRedirectResult,
 } from "@firebase/auth";
 import { addDoc, collection, getDocs, query, where } from "@firebase/firestore";
 // import { logEvent } from "firebase/analytics";
@@ -30,11 +32,32 @@ const checkUserAndSignIn = async (user) => {
   }
 };
 
-export const signInWithGoogle = async () => {
+// export const signInWithGoogle = async () => {
+//   try {
+//     const user = await signInWithPopup(auth, googleProvider);
+//     const userEmail = user.user;
+//     checkUserAndSignIn(userEmail);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+export const signInWithGoogleRedirect = async () => {
   try {
-    const user = await signInWithPopup(auth, googleProvider);
+    const user = await signInWithRedirect(auth, googleProvider);
     const userEmail = user.user;
     checkUserAndSignIn(userEmail);
+    handleRedirectResult();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const handleRedirectResult = async () => {
+  try {
+    const result = await getRedirectResult(auth);
+    const user = result.user;
+    console.log("User signed in: ", user);
   } catch (error) {
     console.error(error);
   }

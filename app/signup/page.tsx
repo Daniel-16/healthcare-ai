@@ -2,7 +2,7 @@
 import Link from "next/link";
 import ShowPassword from "@/components/ShowPassword";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { createUserWithEmail } from "@/utils/auth";
+import { createUserWithEmail } from "@/firebaseUtils/auth";
 import ErrorModal from "@/components/Error";
 import AuthButton from "@/components/AuthButton";
 

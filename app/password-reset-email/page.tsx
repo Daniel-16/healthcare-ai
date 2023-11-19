@@ -3,7 +3,7 @@ import AuthButton from "@/components/AuthButton";
 import BackButton from "@/components/BackButton";
 import ErrorModal from "@/components/Error";
 import SuccessMessage from "@/components/SuccessMessage";
-import { passwordReset } from "@/utils/auth";
+import { passwordReset } from "@/firebaseUtils/auth";
 import { ChangeEvent, useState } from "react";
 
 const ResetEmail = () => {

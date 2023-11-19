@@ -1,7 +1,11 @@
 "use client";
 import ShowPassword from "@/components/ShowPassword";
 import Link from "next/link";
-import { signInWithEmail, signInWithGoogle } from "../../utils/auth";
+import {
+  signInWithEmail,
+  // signInWithGoogle,
+  signInWithGoogleRedirect,
+} from "../../firebaseUtils/auth";
 import { useState, ChangeEvent, FormEvent } from "react";
 import ErrorModal from "@/components/Error";
 import ProviderButton from "@/components/ProviderButton";
@@ -74,7 +78,7 @@ const Login = () => {
             {/* Google svg button */}
             <ProviderButton
               buttonText="Log in with Google"
-              onClickFunc={signInWithGoogle}
+              onClickFunc={signInWithGoogleRedirect}
             />
             <div className="relative">
               <span className="block w-full h-px bg-gray-300"></span>
