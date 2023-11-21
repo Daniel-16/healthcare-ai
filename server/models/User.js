@@ -33,9 +33,8 @@ UserSchema.pre("save", async function (next) {
       const emailExists = new Error("Email already in use");
       return next(emailExists);
     }
-    next();
   } catch (error) {
-    next(error);
+    throw new Error(error);
   }
   try {
     const salt = await bcrypt.genSalt(10);
