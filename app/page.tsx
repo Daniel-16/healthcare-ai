@@ -1,3 +1,4 @@
+import CompanyLogos from "@/components/CompanyLogos";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <Header />
       <HeroSection />
+      <CompanyLogos />
       <Footer />
     </>
   );
