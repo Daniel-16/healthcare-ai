@@ -1,7 +1,7 @@
 import UserModel from "../models/User.js";
 
 const createUser = async (req, res) => {
-  const { username } = req.body;
+  const { fullname, email, accountType, password } = req.body;
   try {
     const user = await UserModel.create({ username });
     res.status(201).json({
