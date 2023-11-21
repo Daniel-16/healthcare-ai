@@ -1,6 +1,7 @@
 import Image from "next/image";
-import hero from "../public/images/undraw_doctor_kw5l.png";
+import hero from "../public/assets/images/undraw_doctor_kw5l.png";
 import Link from "next/link";
+import HeroIcon from "../public/assets/icons/undraw_medicine_b-1-ol.svg";
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = () => {
         <div className="pt-8 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
           <Link
             href="/signup"
-            className="px-7 py-3 w-full bg-indigo-700 text-white text-center rounded-lg shadow-md block sm:w-auto hover:bg-indigo-800 duration-75"
+            className="px-7 py-3 w-full bg-indigo-700 text-white text-center rounded-lg shadow-md block sm:w-auto hover:bg-indigo-800 duration-300"
           >
             Get started
           </Link>
@@ -29,7 +30,7 @@ const HeroSection = () => {
           </Link> */}
           <Link
             href={"/"}
-            className="cta-pr-btn px-4 py-2 text-indigo-600 font-medium rounded-md inline-flex items-center hover:bg-indigo-100 "
+            className="px-7 py-3 w-full text-center sm:w-auto text-indigo-600 font-medium rounded-md inline-flex items-center hover:bg-indigo-100 duration-300"
           >
             Learn More
             <svg
@@ -50,7 +51,8 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="flex-1 text-center mt-7 lg:mt-0 lg:ml-3">
-        <Image src={hero} alt="Doctor" priority={true} />
+        <Image src={HeroIcon} alt="Doctor" priority={true} />
+        {/* <HeroIcon /> */}
       </div>
     </section>
   );
