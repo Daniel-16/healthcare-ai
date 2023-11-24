@@ -25,6 +25,7 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
+//Function before saving to DB
 UserSchema.pre("save", async function (next) {
   const email = this.email;
   const user = await UserModel.findOne({ email });

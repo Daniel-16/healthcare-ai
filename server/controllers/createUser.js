@@ -2,6 +2,7 @@ import UserModel from "../models/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
+//Create json-web-token
 const createToken = (_id, email) => {
   return jwt.sign({ userId: _id, email }, `${process.env.JWT_SECRET}`, {
     expiresIn: "7d",
