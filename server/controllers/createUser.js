@@ -1,6 +1,7 @@
 import UserModel from "../models/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import DoctorModel from "../models/Doctor.js";
 
 //Create json-web-token
 const createToken = (_id, email) => {
@@ -10,7 +11,7 @@ const createToken = (_id, email) => {
 };
 
 export const createUser = async (req, res) => {
-  const { fullname, email, accountType, password } = req.body;
+  const { fullname, email, accountType, password, doctorsInfo } = req.body;
   try {
     const user = await UserModel.create({
       fullname,
@@ -18,6 +19,14 @@ export const createUser = async (req, res) => {
       accountType,
       password,
     });
+    if (accountType === "Doctor") {
+      let doctorProfile;
+      if (doctorsInfo) {
+        doctorProfile = await DoctorModel.create(doctorsInfo);
+      }
+      user.doctorsInfo = doctorProfile;
+      await user.save();
+    }
 
     const token = createToken(user._id, user.email);
 
