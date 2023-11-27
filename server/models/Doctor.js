@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import UserModel from "./User.js";
 
 const DoctorSchema = new mongoose.Schema({
   medLicenseNo: {
@@ -16,8 +15,4 @@ const DoctorSchema = new mongoose.Schema({
   },
 });
 
-const DoctorModel = UserModel.discriminator("Doctor", DoctorSchema, {
-  accountType: "Doctor",
-});
-
-export default DoctorModel;
+export default DoctorSchema;

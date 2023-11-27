@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import DoctorSchema from "./Doctor";
 
 const UserSchema = new mongoose.Schema({
   fullname: {
@@ -22,6 +23,12 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+  },
+  doctorsInfo: {
+    type: DoctorSchema,
+    required: function () {
+      return this.accountType === "Doctor";
+    },
   },
 });
 
@@ -46,6 +53,10 @@ UserSchema.pre("save", async function (next) {
     next(error);
   }
 });
+
+UserSchema.path("doctorsInfo").validate(function () {
+  return this.accountType === "Doctor";
+}, "Doctor info is not filled out for Doctor account type");
 
 const UserModel = mongoose.model("User", UserSchema);
 export default UserModel;
