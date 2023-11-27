@@ -17,22 +17,17 @@ const UserSchema = new mongoose.Schema({
   },
   accountType: {
     type: String,
-    required: true,
+    enum: ["Patient", "Doctor"],
   },
   password: {
     type: String,
     required: true,
   },
-  doctorsInfo: {
+  doctorProfile: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Doctor",
   },
 });
-
-//Validate user account type
-UserSchema.path("doctorsInfo").validate(function () {
-  return this.accountType === "Doctor";
-}, "Doctor info can only be filled for doctor account");
 
 //Function before saving to DB
 UserSchema.pre("save", async function (next) {
