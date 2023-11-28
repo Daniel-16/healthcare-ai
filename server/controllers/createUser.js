@@ -13,29 +13,24 @@ const createToken = (_id, email) => {
 export const createUser = async (req, res) => {
   const { fullname, email, accountType, password, doctorProfile } = req.body;
   try {
+    let user;
     if (accountType === "Doctor") {
       const newDocProfile = await DoctorModel.create(doctorProfile);
-      const user = await UserModel.create({
+      user = await UserModel.create({
         fullname,
         email,
         accountType,
         password,
         doctorProfile: newDocProfile._id,
       });
-      const token = createToken(user._id, user.email);
-      res.status(201).json({
-        success: true,
-        user,
-        token,
+    } else {
+      user = await UserModel.create({
+        fullname,
+        email,
+        accountType,
+        password,
       });
     }
-
-    const user = await UserModel.create({
-      fullname,
-      email,
-      accountType,
-      password,
-    });
 
     const token = createToken(user._id, user.email);
 
