@@ -14,6 +14,12 @@ export const createUser = async (req, res) => {
   const { fullname, email, accountType, password, doctorProfile } = req.body;
   try {
     let user;
+    const doctor = await DoctorModel.findOne({
+      medLicenseNo: doctorProfile.medLicenseNo,
+    });
+    if (doctor) {
+      throw new Error("Med License number already exists");
+    }
     if (accountType === "Doctor") {
       // const newDocProfile = await DoctorModel.create(doctorProfile);
       user = await UserModel.create({
@@ -23,7 +29,11 @@ export const createUser = async (req, res) => {
         password,
         // doctorProfile: newDocProfile._id,
       });
-      await DoctorModel.create({ doctorProfileId: user._id, ...doctorProfile });
+      await DoctorModel.create({
+        doctorProfileId: user._id,
+        doctorName: user.fullname,
+        ...doctorProfile,
+      });
     } else {
       user = await UserModel.create({
         fullname,
