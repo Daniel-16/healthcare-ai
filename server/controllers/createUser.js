@@ -15,14 +15,15 @@ export const createUser = async (req, res) => {
   try {
     let user;
     if (accountType === "Doctor") {
-      const newDocProfile = await DoctorModel.create(doctorProfile);
+      // const newDocProfile = await DoctorModel.create(doctorProfile);
       user = await UserModel.create({
         fullname,
         email,
         accountType,
         password,
-        doctorProfile: newDocProfile._id,
+        // doctorProfile: newDocProfile._id,
       });
+      await DoctorModel.create({ doctorProfileId: user._id, ...doctorProfile });
     } else {
       user = await UserModel.create({
         fullname,

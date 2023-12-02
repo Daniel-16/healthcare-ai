@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import DoctorModel from "./Doctor.js";
 
 const UserSchema = new mongoose.Schema({
   fullname: {
@@ -23,10 +24,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  doctorProfile: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Doctor",
-  },
+  // doctorProfile: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Doctor",
+  // },
 });
 
 //Function before saving to DB
