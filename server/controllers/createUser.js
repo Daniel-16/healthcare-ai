@@ -1,7 +1,7 @@
-import UserModel from "../models/User.js";
+import UserModel from "../models/user.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import DoctorModel from "../models/Doctor.js";
+import DoctorModel from "../models/doctor.js";
 
 //Create json-web-token
 const createToken = (_id, email) => {

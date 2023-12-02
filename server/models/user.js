@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import DoctorModel from "./Doctor.js";
+import DoctorModel from "./doctor.js";
 
 const UserSchema = new mongoose.Schema({
   fullname: {

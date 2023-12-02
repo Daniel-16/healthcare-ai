@@ -1,4 +1,4 @@
-import DoctorModel from "../models/Doctor.js";
+import DoctorModel from "../models/doctor.js";
 
 const createDoctor = async (req, res) => {
   const { medLicenseNo, specialization, yearsOfExp } = req.body;
