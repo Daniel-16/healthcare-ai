@@ -1,14 +1,7 @@
 import UserModel from "../models/user.js";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import DoctorModel from "../models/doctor.js";
-
-//Create json-web-token
-const createToken = (_id, email) => {
-  return jwt.sign({ userId: _id, email }, `${process.env.JWT_SECRET}`, {
-    expiresIn: "7d",
-  });
-};
+import { createToken } from "../config/createToken.js";
 
 export const createUser = async (req, res) => {
   const { fullname, email, accountType, password, doctorProfile } = req.body;
