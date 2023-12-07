@@ -19,7 +19,9 @@ export const getAllDoctors = async (req, res) => {
 export const searchDoctor = async (req, res) => {
   const { specialization } = req.body;
   try {
-    const doctor = await DoctorModel.find({ specialization });
+    const doctor = await DoctorModel.find({ specialization }).sort({
+      yearsOfExp: -1,
+    });
     if (doctor.length === 0) {
       return res.status(404).json({
         success: false,
