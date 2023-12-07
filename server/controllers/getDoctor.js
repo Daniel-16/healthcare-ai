@@ -3,9 +3,7 @@ import DoctorModel from "../models/doctor.js";
 
 export const getAllDoctors = async (req, res) => {
   try {
-    const doctors = await UserModel.find({ accountType: "Doctor" }).select(
-      "-password"
-    );
+    const doctors = await DoctorModel.find({});
     res.status(201).json({
       success: true,
       doctors,
