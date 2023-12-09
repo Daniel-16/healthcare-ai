@@ -5,19 +5,24 @@ const consultationSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  doctroId: {
+  doctorId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Doctor",
-  },
-  message: {
-    type: String,
-    required: true,
   },
   timestamp: {
     type: Date,
     default: Date.now,
   },
+  message: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ["Pending", "Approved", "Rejected", "Completed"],
+    default: "Pending",
+  },
 });
 
-const Consultation = mongoose.model("Consultation", consultationSchema);
-export default Consultation;
+const ConsultationModel = mongoose.model("Consultation", consultationSchema);
+export default ConsultationModel;
