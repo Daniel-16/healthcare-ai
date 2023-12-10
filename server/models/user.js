@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import DoctorModel from "./doctor.js";
+import crypto from "crypto";
 
 const UserSchema = new mongoose.Schema({
   fullname: {
@@ -24,11 +25,20 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // doctorProfile: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "Doctor",
-  // },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
 });
+
+//Funtion to reset password token
+UserSchema.methods.generatePasswordToken = function () {
+  const resetToken = crypto.randomBytes(20).toString("hex");
+  this.resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+  this.resetPasswordExpires = Date.now() + 3600000;
+  return resetToken;
+};
 
 //Function before saving to DB
 UserSchema.pre("save", async function (next) {
