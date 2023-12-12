@@ -3,7 +3,7 @@ import DoctorModel from "../models/doctor.js";
 
 export const getAllDoctors = async (req, res) => {
   try {
-    const doctors = await DoctorModel.find({});
+    const doctors = await DoctorModel.find({}).sort({ yearsOfExp: -1 });
     res.status(201).json({
       success: true,
       doctors,
