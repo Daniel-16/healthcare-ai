@@ -14,7 +14,6 @@ export const createUser = async (req, res) => {
       throw new Error("Med License number already exists");
     }
     if (accountType === "Doctor") {
-      // const newDocProfile = await DoctorModel.create(doctorProfile);
       user = await UserModel.create({
         fullname,
         email,
@@ -55,7 +54,7 @@ export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     if (!email || !password) {
-      throw Error("Invalid email or password. All fields must be filled");
+      throw Error("Invalid email or password. All fields must be filled!");
     }
     const user = await UserModel.findOne({ email });
     if (!user) {
